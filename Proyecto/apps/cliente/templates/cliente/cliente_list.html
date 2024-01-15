@@ -1,0 +1,16 @@
+{% extends 'core/base.html' %}
+
+{% block contenido %}
+    {% for cliente in listado_clientes %}
+        <ul>
+            <li>
+                {{ cliente.apellido }}
+                {{ cliente.nombre }}
+                {{ cliente.domicilio }}
+                {{ cliente.provincia }}
+            </li>
+        </ul>
+
+        
+    {% endfor %}
+{% endblock contenido %}
