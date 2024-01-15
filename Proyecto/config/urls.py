@@ -22,4 +22,7 @@ urlpatterns = [
     path("", include(("core.urls", "core"))),
     path("cliente/", include(("cliente.urls", "cliente"))),
     path("producto/", include(("producto.urls", "producto"))),
+    path("pedido/", include(("pedido.urls", "pedido"))),
+    
+
 ]

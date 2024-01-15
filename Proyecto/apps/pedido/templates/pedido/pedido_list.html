@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block contenido %}
+    {% for pedido in listado_pedidos %}
+        <ul>
+            <li>
+                {{ pedido.cliente_pedido }}
+                {{ pedido.cantidad_articulos }}
+                {{ pedido.articulo_pedido }}
+                {{ pedido.importe }}
+            </li>
+        </ul>
+
+        
+    {% endfor %}
+{% endblock contenido %}
+
+
+
+
+    
