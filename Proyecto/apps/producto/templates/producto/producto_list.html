@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block contenido %}
+    {% for producto in listado_produ %}
+        <ul>
+            <li>
+                {{ Producto.numero_articulo }}
+                {{ producto.nombre_producto }}
+                {{ producto.precio }}
+            
+            </li>
+        </ul>
+        
+    {% endfor %}
+{% endblock contenido %}
