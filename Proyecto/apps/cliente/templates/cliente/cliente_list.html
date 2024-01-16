@@ -1,16 +1,52 @@
 {% extends 'core/base.html' %}
 
-{% block contenido %}
-    {% for cliente in listado_clientes %}
-        <ul>
-            <li>
-                {{ cliente.apellido }}
-                {{ cliente.nombre }}
-                {{ cliente.domicilio }}
-                {{ cliente.provincia }}
-            </li>
-        </ul>
 
+{% block contenido %}
+
+<h2>
+    LISTADO DE CLIENTES
+</h2>   
+
+<table border="2">
+    <thead>
+       <th>Apellido:</th>
+        <th>Nombre:</th>
+        <th>Domicilio:</th>
+        <th>Provincia:</th>
+        <th>Tipo doc.:</th>
+        <th>Nro. documento:</th>
+        <th>Email:</th>
         
-    {% endfor %}
+    </thead>
+    <tbody>
+        {% for variable_cliente in listado_clientes  %}
+            <tr>
+                <td> {{ variable_cliente.apellido }} </td>
+                <td> {{ variable_cliente.nombre }} </td>
+                <td> {{ variable_cliente.domicilio }} </td>
+                <td> {{ variable_cliente.provincia_id }} </td>
+                <td> {{ variable_cliente.tipo_documento_id }} </td>
+                <td> {{ variable_cliente.nro_documento }} </td>
+                <td> {{ variable_cliente.email }} </td>
+                
+            </tr>
+        {% endfor %}
+
+    </tbody>
+
+</table>
+
+<style>
+    button {
+      margin: 10px;
+    }
+</style>
+
+<button><a href="{% url 'cliente:index' %}">Volver</a></button>
+<button><a href="{% url 'core:index' %}">Ir a Inicio</a></button>
+
+    
 {% endblock contenido %}
+
+
+

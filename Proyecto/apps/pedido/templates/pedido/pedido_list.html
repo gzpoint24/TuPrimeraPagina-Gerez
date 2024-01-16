@@ -1,18 +1,39 @@
 {% extends 'core/base.html' %}
 
 {% block contenido %}
-    {% for pedido in listado_pedidos %}
-        <ul>
-            <li>
-                {{ pedido.cliente_pedido }}
-                {{ pedido.cantidad_articulos }}
-                {{ pedido.articulo_pedido }}
-                {{ pedido.importe }}
-            </li>
-        </ul>
+    <h2>
+        LISTADO DE PEDIDOS
+    </h2>   
 
-        
-    {% endfor %}
+    <table border="4">
+        <thead>
+        <th>Cliente:</th>
+        <th>Cantidad:</th>
+        <th>Detalle:</th>
+        <th>Importe:</th>
+        </thead>
+
+        <tbody>
+            {% for variable_pedido in listado_pedidos %}
+                <tr>
+                    <td> {{ variable_pedido.cliente_pedido }} </td>
+                    <td> {{ variable_pedido.cantidad_articulos }} </td>
+                    <td> {{ variable_pedido.articulo_pedido }} </td>
+                    <td> {{ variable_pedido.importe }} </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <style>
+        button {
+        margin: 15px;
+        }
+    </style>
+
+    <button><a href="{% url 'pedido:index' %}"> Volver </a></button>
+    <button><a href="{% url 'core:index' %}"> Ir a Inicio </a></button>
+
 {% endblock contenido %}
 
 

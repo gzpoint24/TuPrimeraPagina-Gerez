@@ -1,15 +1,35 @@
 {% extends 'core/base.html' %}
 
 {% block contenido %}
-    {% for producto in listado_produ %}
-        <ul>
-            <li>
-                {{ Producto.numero_articulo }}
-                {{ producto.nombre_producto }}
-                {{ producto.precio }}
-            
-            </li>
-        </ul>
-        
-    {% endfor %}
+<h2>
+    LISTADO DE PRODUCTOS
+</h2>   
+
+<table border="3">
+    <thead>
+       <th>Nro.Art.:</th>
+       <th>Producto:</th>
+       <th>Precio:</th>
+    </thead>
+
+    <tbody>
+        {% for variable_producto in listado_produ %}
+            <tr>
+                <td> {{ variable_producto.numero_articulo }} </td>
+                <td> {{ variable_producto.nombre_producto }} </td>
+                <td> {{ variable_producto.precio }} </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<style>
+    button {
+      margin: 15px;
+    }
+</style>
+
+<button><a href="{% url 'producto:index' %}"> Volver </a></button>
+<button><a href="{% url 'core:index' %}"> Ir a Inicio </a></button>
+  
 {% endblock contenido %}

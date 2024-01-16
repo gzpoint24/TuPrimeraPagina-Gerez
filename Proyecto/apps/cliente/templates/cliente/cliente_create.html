@@ -6,7 +6,10 @@
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">GUARDAR</button>
+        <button><a href="{% url 'cliente:index' %}"> Volver </a></button>
     </form>
     
+ 
+
 {% endblock contenido %}
 
